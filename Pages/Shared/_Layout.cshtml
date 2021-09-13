@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/css/albums.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/media-queries.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Player.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" asp-append-version="true" />
 </head>
@@ -20,8 +21,8 @@
     <header>
         <div class="header-container">
             <div class="header-logo">
-                <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" style="color:white" />
-            </div>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Index"><img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" style="color:white" /></a>
+</div>
             <nav class="nav-mobile">
                 <!-- Profile -->
                 <div class="profile">
@@ -55,7 +56,7 @@
                 <ul>
                     <li><a href="#">Premium</a></li>
                     <li><a href="#">Help</a></li>
-                    <li><a href="#">Download</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a></li>
                     <li role="separator"></li>
                 </ul>
                 <!-- Profile menu -->
@@ -88,15 +89,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>*@
-
-
-        @*<a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>*@
-
-        @*<a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>*@
-
-
-
-    </header>
+     </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
