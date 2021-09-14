@@ -55,7 +55,7 @@
 .hero-terms-link + span,
 .terms > span {
   font-size: 1.2rem;
-  color: black;
+  color: white;
 }
 
 .hero-terms-link,
@@ -69,5 +69,5 @@
 }
 
 .hero-terms-link:hover {
-  color: var(--white);
+  color: var(--green1);
 }
