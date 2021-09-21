@@ -11,7 +11,12 @@
   margin-bottom: 1.5rem;
   text-shadow: 0 0 0.1rem var(--black);
 }
-
+.more{
+  font-size: large;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
 /* 'Start listening to the best new releases' paragraph */
 .albums-content p {
   font-size: 1.8rem;
