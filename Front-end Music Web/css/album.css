@@ -5,9 +5,6 @@
   text-align: center;
   padding: 5rem 1.5rem;
 }
-.album{
-  background-color: sandybrown;
-}
 /* 'Looking for music?' heading */
 .albums-content h2 {
   font-size: 3rem;
@@ -39,7 +36,12 @@
   background: var(--gray3);
   color: var(--white);
 }
-
+.genres_playlist{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 40px;
+  padding: 40px;
+}
 .albums-content button:active {
   background: var(--black);
   border-color: var(--black);
