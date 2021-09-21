@@ -4,16 +4,28 @@
     color:white;
     align-items:center;
     min-width:230px;
-    padding: 80px 10px;
+    padding: 0 10px;
     height:100vh;
     flex:0.2;
 }
+.collection_header{
+    display: flex;
+    justify-content: space-between;
+}
+.header_right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
     .side_bar_home>hr{
-        border:1px solid #282828;
-        width:90px;
+        border:1px solid rgb(133, 130, 130) ;
         margin:10px auto;
     }
-
+.sidebar_tittle{
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 12px;
+}
 .colection_body {
     padding: 30px;
     height: 100vh;
