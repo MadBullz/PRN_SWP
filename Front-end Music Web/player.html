@@ -172,7 +172,7 @@
     const progress =$("#progress")
     const next_Btn = $('.fa-step-forward')
     const prev_Btn = $('.fa-step-backward')
-
+    var count=0;
 const app={
   currentIndex:0,
   songs:[
@@ -275,11 +275,14 @@ playBtn.click(function(){
     }
     
 })
-    //Next Song
-    next_Btn.click(function(){
+    var cobac=()=> {
+        //app.nextSong=app.nextSong.bind(this)
         app.nextSong()
         audio.get(0).play()
-    })
+     }
+    cobac=cobac.bind(this)
+    //Next Song
+    next_Btn.click(cobac)
 },
 
 //load Song
@@ -291,15 +294,14 @@ loadCurrentSong: function(){
     player_tittle.html(this.currrentSong.name)
 },
 //next Song
-
 nextSong:function (){
     this.currentIndex++
-    console.log(this.currrentIndex,this.songs.length)
+    console.log(this,this.currentIndex)
     if(this.currentIndex>=this.songs.length){
         //chỗ này em gán lại 0 nếu nó vượt quá length của array,anh hỉu hok
-        this.currrentIndex =0
+        this.currentIndex=0
     }
-    this.loadCurrentSong()
+      this.loadCurrentSong()
 },
 
 start:function(){
