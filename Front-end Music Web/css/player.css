@@ -306,15 +306,13 @@ i:hover{
     background-color: #ccc4;
 }
 .progress{
-    position: relative;
     height: 100%;
-    width: 30%;
+    background-color: green;
     border-radius: 10px;
-    background-color: var(--secondary-color);
+    margin-left: 1px;
+    margin-bottom: 10px;
 }
-.progress-bar:hover .progress{
-    background-color: var(--green-color);
-}
+
 .progress-bar:hover .progress::after{
     content: "";
     position: absolute;
@@ -323,7 +321,6 @@ i:hover{
     height: var(--size);
     right: 0;
     border-radius: 50%;
-    background-color: var(--primary-color);
     transform: translate(50%, calc(2px - 50%));
 }
 .control_bar{
@@ -331,4 +328,10 @@ i:hover{
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+audio{
+    display: none;
+}
+.my.pause{
+    display: none;
 }
