@@ -309,7 +309,6 @@ i:hover{
     height: 100%;
     background-color: green;
     border-radius: 10px;
-    margin-left: 1px;
     margin-bottom: 10px;
 }
 
@@ -328,10 +327,18 @@ i:hover{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    cursor: pointer;
 }
 audio{
     display: none;
 }
 .my.pause{
     display: none;
+}
+.active{
+    color: green;;
+}
+.active:hover{
+    color:green;
+    transform: scale(1.1);
 }

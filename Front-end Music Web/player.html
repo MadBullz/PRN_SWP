@@ -125,7 +125,7 @@
             </div>
             <div class="footer_center">
                 <div class="control_bar">
-                <i class="fas fa-random fa-2x" style="color:green" id="control_green"></i>
+                <i class="fas fa-random fa-2x active" id="control_green"></i>
                 <i class="fas fa-step-backward fa-2x" id="control_icon"></i>
                 <div class="play_button">
                     <i class="far fa-play-circle fa-5x " id="control_icon"></i>
@@ -134,7 +134,7 @@
                 
                
                 <i class="fas fa-step-forward fa-2x" id="control_icon"></i>
-                <i class="fas fa-redo fa-2x" style="color:green" id="control_green"></i>
+                <i class="fas fa-redo fa-2x" id="control_green"></i>
                 </div>
                 <div class="progress-container">
                     <span id="start_time"></span>
@@ -172,6 +172,7 @@
     const progress =$("#progress")
     const next_Btn = $('.fa-step-forward')
     const prev_Btn = $('.fa-step-backward')
+    const random_Btn = $('.fa-random')
     var count=0;
 const app={
   currentIndex:0,
@@ -275,15 +276,26 @@ playBtn.click(function(){
     }
     
 })
-    var cobac=()=> {
+    //function call next song
+    var callback=()=> {
         //app.nextSong=app.nextSong.bind(this)
         app.nextSong()
         audio.get(0).play()
      }
-    cobac=cobac.bind(this)
+    //function for prev song
+     var onprev=()=>{
+         app.prevSong()
+         audio.get(0).play()
+     }
+    onprev=onprev.bind(this)
+    callback=callback.bind(this)
     //Next Song
-    next_Btn.click(cobac)
+    prev_Btn.click(onprev)
+    next_Btn.click(callback)
+
 },
+
+
 
 //load Song
 
@@ -298,7 +310,16 @@ nextSong:function (){
     this.currentIndex++
     console.log(this,this.currentIndex)
     if(this.currentIndex>=this.songs.length){
-        //chỗ này em gán lại 0 nếu nó vượt quá length của array,anh hỉu hok
+        this.currentIndex=0
+    }
+      this.loadCurrentSong()
+},
+
+//prevSong
+prevSong:function (){
+    this.currentIndex--
+    console.log(this,this.currentIndex)
+    if(this.currentIndex<=0){
         this.currentIndex=0
     }
       this.loadCurrentSong()
