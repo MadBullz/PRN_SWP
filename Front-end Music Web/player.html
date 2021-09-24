@@ -125,7 +125,7 @@
             </div>
             <div class="footer_center">
                 <div class="control_bar">
-                <i class="fas fa-random fa-2x active" id="control_green"></i>
+                <i class="fas fa-random fa-2x" id="control_green"></i>
                 <i class="fas fa-step-backward fa-2x" id="control_icon"></i>
                 <div class="play_button">
                     <i class="far fa-play-circle fa-5x " id="control_icon"></i>
@@ -160,7 +160,13 @@
 </body>
 </html>
 
-
+<!-- Function list  
+    1.Render and display songs 
+    2.Play / pause /seek 
+    3. Next/prev control 
+    4. Random Songs control 
+    5.Next/Repeat when song ended 
+    6. Play song choosed in list when click on this song -->
 <!-- Player Process -->
 <script>
     const playlist = $('.playlist_song');
@@ -173,9 +179,11 @@
     const next_Btn = $('.fa-step-forward')
     const prev_Btn = $('.fa-step-backward')
     const random_Btn = $('.fa-random')
+    const repeat_Btn = $('fa-redo')
     var count=0;
 const app={
   currentIndex:0,
+  isRandom: false,
   songs:[
     { 
     name:'Real love',
@@ -292,6 +300,14 @@ playBtn.click(function(){
     //Next Song
     prev_Btn.click(onprev)
     next_Btn.click(callback)
+    random_Btn.click(function(e){
+        app.isRandom = !app.isRandom
+        random_Btn.toggleClass('active',app.isRandom)
+        app.getRandomSong()
+        audio.get(0).play()
+    })
+
+    //Handle continue playing when audio ended
 
 },
 
@@ -312,6 +328,9 @@ nextSong:function (){
     if(this.currentIndex>=this.songs.length){
         this.currentIndex=0
     }
+    $('.fa-play-circle').addClass("my pause")
+    $('.fa-pause-circle').removeClass("pause")
+    
       this.loadCurrentSong()
 },
 
@@ -322,7 +341,20 @@ prevSong:function (){
     if(this.currentIndex<=0){
         this.currentIndex=0
     }
+    $('.fa-play-circle').addClass("my pause")
+    $('.fa-pause-circle').removeClass("pause")
+    
       this.loadCurrentSong()
+},
+
+//playRandomSong
+getRandomSong:function(){
+    let newIndex
+    do{
+        newIndex = Math.floor(Math.random()*this.songs.length)
+    }while(newIndex == this.currentIndex)
+    this.currentIndex=newIndex
+    this.loadCurrentSong()
 },
 
 start:function(){
