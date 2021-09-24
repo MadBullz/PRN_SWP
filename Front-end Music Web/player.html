@@ -289,6 +289,7 @@ playBtn.click(function(){
         //app.nextSong=app.nextSong.bind(this)
         app.nextSong()
         audio.get(0).play()
+        
      }
     //function for prev song
      var onprev=()=>{
@@ -308,7 +309,28 @@ playBtn.click(function(){
     })
 
     //Handle continue playing when audio ended
-
+    audio.get(0).onended = function(){
+        if(app.isRandom){
+            random_Btn.click()
+            if($('.fa-play-circle').hasClass("my pause")){
+                $('.fa-play-circle').removeClass("my pause")
+                $('.fa-pause-circle').addClass("pause")
+            }else{
+                $('.fa-play-circle').addClass("my pause")
+                $('.fa-pause-circle').removeClass("pause")
+            }
+        }else{
+            next_Btn.click()
+            if($('.fa-play-circle').hasClass("my pause")){
+                $('.fa-play-circle').removeClass("my pause")
+                $('.fa-pause-circle').addClass("pause")
+            }else{
+                $('.fa-play-circle').addClass("my pause")
+                $('.fa-pause-circle').removeClass("pause")
+            }
+        }
+        
+    }
 },
 
 
