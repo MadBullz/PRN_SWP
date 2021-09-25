@@ -121,7 +121,7 @@
                 <div class="body_songs">
                     <div class="body_song_icon play_button">
                             <i class="fas fa-play-circle fa-5x" id="playlist_body_suffle" style="color: green;"></i>
-                            <i class="fas fa-pause-circle fa-5x my pause"></i>
+                            <i class="fas fa-pause-circle fa-5x my pause" id="playlist_body_suffle"></i>
                       <i class="far fa-heart fa-2x" style="color: green;"></i>
                         <i class="fas fa-ellipsis-h fa-2x"></i>
                     </div>
@@ -437,6 +437,7 @@
             } while (newIndex == this.currentIndex)
             this.currentIndex = newIndex
             this.loadCurrentSong()
+            app.render()
         },
 
         start: function () {
