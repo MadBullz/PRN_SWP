@@ -166,11 +166,15 @@
             </div>
             <div class="footer_right">
                 <i class="fas fa-list-ul fa-2x"></i>
-                <i class="fas fa-volume-up fa-2x"></i>
+                <div class="volume_control">
+                    <i id="volume" class="fas fa-volume-up fa-2x"></i>
+                <i id="volume_mute" class="fas fa-volume-mute fa-2x changesound"></i>
+                </div>
+                
                 <div class="input-div">
                     <div class="volumn-input-div">
-                        <input type="range" value="100" step="5">
-                        <div class="volume-progress"></div>
+                        <input type="range" value="100" step="5" min="0" >
+                     
                     </div>
                 </div>
             </div>
@@ -206,7 +210,9 @@
     const random_Btn = $('.fa-random')
     const repeat_Btn = $('.fa-retweet')
     const love_Btn = $(".fa-heart")
+    const volume = $(".volume_control")
     const app = {
+        isMute:false,
         currentIndex: 0,
         isRandom: false,
         isRepeat: false,
@@ -316,6 +322,7 @@
                             progress.css("width", song_progress + '%')
                         }
                     }
+                    
                     var e = parseInt(audio.get(0).duration % 60);
                     var d = parseInt((audio.get(0).duration / 60) % 60);
                     $('#end_time').html(e + ':' + d * 10)
@@ -347,6 +354,22 @@
                 audio.get(0).play()
                 $('.fa-play-circle').addClass("my pause")
                 $('.fa-pause-circle').removeClass("pause")
+            })
+            //volume on click
+            volume.click(function(){
+                if ($('#volume').hasClass("changesound")) {
+                    $('#volume').removeClass("changesound")
+                    $('#volume_mute').addClass("changesound")
+                    document.querySelector("input").value= 100
+                     audio.get(0).volume =slider.value/100
+                
+
+                } else {
+                    $('#volume').addClass("changesound")
+                    $('#volume_mute').removeClass("changesound")
+                    document.querySelector("input").value=0
+                    audio.get(0).volume = slider.value/100
+                }
             })
 
             //Handle continue playing when audio ended
@@ -391,6 +414,23 @@
                 }
             })
 
+            //volume handle
+            const slider = document.querySelector("input")
+            slider.oninput=function(){
+                audio.get(0).volume = slider.value/100
+                //console.log(slider.value)
+                if(parseInt(slider.value)===0){
+                   app.isMute = true
+                   $('#volume').addClass('changesound')
+                   $('#volume_mute').removeClass('changesound')
+                }else{
+                    app.isMute = false
+                    $('#volume').removeClass('changesound')
+                    $('#volume_mute').addClass('changesound')
+                }
+                console.log(app.isMute)
+             }
+             
         },
 
 

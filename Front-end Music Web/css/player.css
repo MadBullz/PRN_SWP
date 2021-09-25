@@ -405,3 +405,6 @@ audio{
 .song_active{
     background: linear-gradient(to left,#F2709C,#FF9472);
 }
+.fas.changesound{
+    display: none;
+}
