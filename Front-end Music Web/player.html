@@ -257,16 +257,16 @@
         ],
         
         render: function () {
-           
             const htmls = this.songs.map((song, index) => {
+                console.log(song.image)
                 return `
-       <div class="song_row ${check? 'song_active':''}" data-index="${index}">
-            <img class="songRow_album" src="${song.image}" />
+       <div class="song_row \${index===this.currentIndex? 'song_active':''}" data-index="\${index}">
+            <img class="songRow_album" src="\${song.image}" />
                 <div class="songRow_info" style="width: 80%;">
-                   <h1>${song.name}</h1>
-                      <p>${song.singer}</p>
+                   <h1>\${song.name}</h1>
+                      <p>\${song.singer}</p>
                 </div>
-                <div class="loader ${check? 'playing':''}" >
+                <div class="loader \${index== this.currentIndex? 'playing':''}" >
                     <span class="stroke"></span>
                     <span class="stroke"></span>
                     <span class="stroke"></span>
@@ -281,7 +281,6 @@
         </div>
     `
             })
-            
             playlist.html(htmls.join(''))
         },
         defineProperties: function () {
@@ -362,7 +361,6 @@
                     audio.get(0).volume = slider.value / 100
                 }
             })
-
             //Handle continue playing when audio ended
             audio.get(0).onended = function () {
                 if (app.isRandom) {
@@ -419,7 +417,7 @@
                     $('#volume').removeClass('changesound')
                     $('#volume_mute').addClass('changesound')
                 }
-//               // console.log(app.isMute)
+                console.log(app.isMute)
             }
 
         },
@@ -435,7 +433,7 @@
         //next Song
         nextSong: function () {
             this.currentIndex++
-//           // console.log(this, this.currentIndex)
+            console.log(this, this.currentIndex)
             if (this.currentIndex >= this.songs.length) {
                 this.currentIndex = 0
             }
@@ -448,7 +446,7 @@
         //prevSong
         prevSong: function () {
             this.currentIndex--
-           // console.log(this, this.currentIndex)
+            console.log(this, this.currentIndex)
             if (this.currentIndex <= 0) {
                 this.currentIndex = 0
             }
