@@ -1,14 +1,5 @@
-<%-- 
-    Document   : Player
-    Created on : 21-Sep-2021, 21:03:34
-    Author     : nvlon
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,35 +35,6 @@
                     <p>
                         Your Library
                     </p>
-=======
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="css/player.css">
-        <link rel="stylesheet" href="css/base.css">
-        <link rel="stylesheet" href="css/header.css">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Player</title>
-    </head>
-    <body>
-
-        <div class="player">
-            <div class="player_body">
-                <div class="side_bar_home">
-                    <img style="width: 70px;" src="https://cdn.freebiesupply.com/logos/thumbs/2x/gitlab-logo.png" alt="">
-                    <div class="sidebar_option">
-                        <i class="fas fa-home"></i>
-                        <p>
-                            Home
-                        </p>
-
-                    </div>
-                    <div class="sidebar_option">
-                        <i class="fas fa-search"></i>
-                        <p>Search</p>
->>>>>>> 925bc99a862d7618d10260217cdb316a4c9369b4
 
                     </div>
                     <div class="sidebar_option">
@@ -298,13 +260,13 @@
             const htmls = this.songs.map((song, index) => {
                 console.log(song.image)
                 return `
-       <div class="song_row \${index===this.currentIndex? 'song_active':''}" data-index="\${index}">
-            <img class="songRow_album" src="\${song.image}" />
+       <div class="song_row ${index===this.currentIndex? 'song_active':''}" data-index="${index}">
+            <img class="songRow_album" src="${song.image}" />
                 <div class="songRow_info" style="width: 80%;">
-                   <h1>\${song.name}</h1>
-                      <p>\${song.singer}</p>
+                   <h1>${song.name}</h1>
+                      <p>${song.singer}</p>
                 </div>
-                <div class="loader \${index== this.currentIndex? 'playing':''}" >
+                <div class="loader ${index== this.currentIndex? 'playing':''}" >
                     <span class="stroke"></span>
                     <span class="stroke"></span>
                     <span class="stroke"></span>
