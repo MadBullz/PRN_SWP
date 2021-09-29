@@ -21,7 +21,7 @@
   background: linear-gradient(rgb(115, 103, 87),black);
 }
 .my_preview{
-  background-color: black;
+  background: rgb(34, 34, 34);
 }
 .grid-container {
   display: grid;
