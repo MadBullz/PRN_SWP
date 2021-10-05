@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
     .side_bar_home>hr{
         border:1px solid rgb(133, 130, 130) ;
@@ -34,7 +35,7 @@
     color: white;
     overflow-y:overlay;
     flex: 0.8;
-    background: linear-gradient(rgb(228, 201, 129),black);
+    background: linear-gradient(rgb(245, 159, 192),rgb(141, 139, 139));
 }
   .colection_body::-webkit-scrollbar{
     display: none;
@@ -421,7 +422,6 @@ audio{
 .tooltip{
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
@@ -463,7 +463,6 @@ audio{
   .toolbottom{
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
   }
 
   .toolbottom .tooltiptext {
@@ -476,20 +475,19 @@ audio{
     padding: 5px 10px;
     position: absolute;
     z-index: 1;
-    top: 150%;
-    left: 50%;
-    margin-left: -60px;
+    top: -30px;
+    right: 110%;
   }
   
   .toolbottom .tooltiptext::after {
     content: "";
     position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
+    top: 45%;
+    left: 100%;
+    margin-top: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent black transparent;
+    border-color: transparent transparent transparent black;
   }
   
   .toolbottom:hover .tooltiptext {
@@ -502,8 +500,8 @@ audio{
       width: 100%;
       height: 100%;
       position: absolute;
-      top: 0;
-      left: 40px;
+      top: -24%;
+      left: 50px;
       display: none;
       justify-content: center;
       align-items: center;
@@ -519,4 +517,32 @@ audio{
       padding: 10px;
       cursor: pointer;
   }
-  
+  .sharing-content li{
+    line-height: 80px;
+    width: 80px;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #e5eef3;
+  }
+  .sharing-content li:nth-child(1) {
+    margin-left: 0;
+}
+.sharing-content li:nth-child(1):hover {
+    background-color: #61c5ec;
+}
+.sharing-content li:nth-child(2):hover {
+    background-color: #3b5998;
+}
+.sharing-content li:nth-child(3):hover {
+    background-color: #ea4335;
+}
+.sharing-content:hover li, .sharing-content.hover li {
+    border-radius: 50%;
+    margin: 0 10px;
+    color: #f1ce64;
+    font-size: 28px;
+}
