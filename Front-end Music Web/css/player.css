@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 .header_right{
     display: flex;
     align-items: center;
@@ -57,6 +58,7 @@
 }
 .header_left>i{
     margin-right: 20px;
+    cursor: pointer;
 }
 .sidebar_option:hover{
     color:white;
@@ -64,6 +66,12 @@
 .sidebar_option>i{
     padding:0 10px;
     margin-top:10px;
+}
+.browse{
+    display: flex;
+    grid-gap: 10px;
+    padding: 10px;
+    cursor: pointer;
 }
 .sidebar_option > p {
        margin-top:10px;
