@@ -15,10 +15,24 @@
 </head>
 
 <body>
+    <div class="add_option">
+        <div class="add_content">
+           <span style="display: flex;align-items: center;
+           justify-content: space-between;"><h2 style="padding:10px;color:white">Add to new playlist</h2> <i class="fas fa-times"></i></span> 
+            <hr style="border:1px solid rgba(182, 164, 164, 0.219);">
+           <span style="display: flex;padding:10px 5px"><i class="fas fa-meteor" style="padding: 3px 10px;"></i> <h3>playlist's name</h3></span> 
+           <span style="display: flex;padding:10px 5px"><i class="fas fa-meteor" style="padding: 3px 10px;"></i> <h3>playlist's name</h3></span> 
+           <span style="display: flex;padding:10px 5px"><i class="fas fa-meteor" style="padding: 3px 10px;"></i> <h3>playlist's name</h3></span> 
+           <span style="display: flex;padding:10px 5px"><i class="fas fa-meteor" style="padding: 3px 10px;"></i> <h3>playlist's name</h3></span> 
+           <span style="display: flex;padding:10px 5px"><i class="fas fa-meteor" style="padding: 3px 10px;"></i> <h3>playlist's name</h3></span> 
+           <span style="display: flex;padding:10px 5px"><i class="fas fa-meteor" style="padding: 3px 10px;"></i> <h3>playlist's name</h3></span> 
+           <span style="display: flex;padding:10px 5px"><i class="fas fa-meteor" style="padding: 3px 10px;"></i> <h3>playlist's name</h3></span> 
+        </div>
+    </div>
     <div class="sharing_option">
-        <div class="sharing-content" style="background:rgba(241, 226, 226, 0.2)">
+        <div class="sharing-content" style="background-color: #6c649e">
             <i class="fas fa-times"></i>
-            <h2 style="text-align: center; padding-bottom:10px;font-size:20px">Share to</h2>
+            <h2 style="text-align: center; padding-bottom:10px;font-size:20px;color: white;">Share to</h2>
             <nav style="text-align: center;padding-bottom:20px">
                <li class="tweet-share"><i class="fab fa-twitter"></i></li>
                <li class="facebook-share"><i class="fab fa-facebook-f"></i></li> 
@@ -330,8 +344,9 @@
                     <span class="tooltiptext">
                         <p id="my_share" onclick="myFunction()"><i class="fas fa-share-alt" ></i> Share</p>
                         <p><i class="fas fa-arrow-alt-circle-down"></i><a href="${song.path}" download=""> Download</a></p>  
-                        <p><i class="fab fa-stack-overflow"></i> Add to playlist</p>
+                        <p onclick="addFunction()" ><i class="fab fa-stack-overflow"></i> Add to playlist</p>
                     </span>
+                    
                 </i>
         </div>
     `
@@ -348,6 +363,7 @@
         handleEvent: function () {
             $('.fa-times').click(function(){
                 document.querySelector('.sharing_option').style.display='none';
+                document.querySelector('.add_option').style.display='none'
             })
 
             //handle love button 

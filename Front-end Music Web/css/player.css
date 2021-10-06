@@ -500,15 +500,36 @@ audio{
       width: 100%;
       height: 100%;
       position: absolute;
-      top: -24%;
-      left: 50px;
+      top: 0;
+      z-index: 1;
       display: none;
       justify-content: center;
       align-items: center;
   }
+  .add_option{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.add_content{
+    width: 300px;
+    height: 400px;
+    background-color: #6c649e;
+}
+.add_content span h3{
+    color: white;
+}
   .sharing-content{
       width: 500px;
-      height: 150px;
+      height: 200px;
+      
       background-color: white;
       opacity: 1;
   }
@@ -545,4 +566,33 @@ audio{
     margin: 0 10px;
     color: #f1ce64;
     font-size: 28px;
+}
+
+.container_browse{
+    width: 90%;
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    grid-gap: 10px;
+}
+.genres{
+   position: relative;
+}
+.genres img{
+    width: 200px;
+}
+
+@media screen and (max-width: 1077px) {
+    .container_browse{
+        grid-template-columns:auto auto auto
+    }
+}
+@media screen and (max-width: 867px) {
+    .container_browse{
+        grid-template-columns:auto auto
+    }
+}
+@media screen and (max-width: 667px) {
+    .container_browse{
+        grid-template-columns:auto 
+    }
 }
