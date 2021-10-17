@@ -19,9 +19,11 @@
     <div class="videoAds">
         <h3 style="color: white;font-weight:500;font-size:2em">Join <a href="" style="color: rgb(224, 201, 69);">Premium</a> to disable Advertisement</h3>
         <div class="Ads_contents">
-            <video id="myVideo" width="100%" height="100%" autoplay>
+            <video id="myVideo" width="100%" height="100%" autoplay muted>
                 <source src="./vid.mp4" type="video/mp4">
               </video>
+              <embed src="./sound.mp3" loop="true" autostart="true">
+              
         </div> 
     </div>
     <!-- Style Ads  -->
@@ -46,6 +48,9 @@
     <!-- End Style Ads  -->
     <!-- Trigger Ads  -->
     <script type='text/javascript'>
+        window.onload = function() {
+            document.getElementById("audioID").play();
+        }
         document.getElementById('myVideo').addEventListener('ended',myHandler,false);
         function myHandler(e) {
             // What you want to do after the event
