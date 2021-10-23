@@ -6,6 +6,9 @@ function addFunction(){
 		document.querySelector('.add_option').style.display='flex'
 	}
 
+	//Light Dark
+
+
 
 
 

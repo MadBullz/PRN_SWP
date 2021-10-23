@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Dashboard.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
-    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>DashBoard</title>
 </head>
@@ -40,15 +39,26 @@
                     <input type="text" placeholder="searching">
                 </div>
                 <div class="header-right">
-                    <img src="./img/man.png" alt="">
+                    <div>
+                        <input type="checkbox" class="checkbox" id="chk" />
+                        <label class="label" for="chk">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                            <div class="ball"></div>
+                        </label>
+                    </div>
+                    <div style="display: flex;align-items: center">
+                    <img src="./img/man.png" alt="" style="margin-right: 0;">
                     <p> Junnn Beo</p> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    
                 </div>
             </div>
             <div class="overview">
                 <h2>Overview</h2>
                 <div class="collection">
                     <!-- box  -->
-                    <div class="box" style="background-color: rgb(236, 140, 140);">
+                    <div class="box" style="background-color: rgb(236, 140, 140);" id="box1">
                         <img src="./img/user.png" alt="">
                         <div class="number">
                             <p>Total user</p>
@@ -56,7 +66,7 @@
                         </div>
                     </div>
                     <!-- box -->
-                    <div class="box" style="background-color: rgb(236, 213, 140);">
+                    <div class="box" style="background-color: rgb(236, 213, 140);" id="box2">
                         <img src="./img/transaction.png" alt="">
                         <div class="number">
                             <p>Revenue</p>
@@ -97,6 +107,17 @@
                             <th>Date</th>
                             <th>Amount</th>
                             <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>#1234</td>
+                            <td>Thanh teaa</td>
+                            <td>19/11/2001</td>
+                            <td>$10</td>
+                            <td>
+                                <div class="status">
+                                    <p>Active</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>#1234</td>
@@ -326,7 +347,12 @@
             }
         },
     });
-    
+    //Lighr Dark
+    const chk = document.getElementById('chk');
+
+	chk.addEventListener('change', () => {
+		document.body.classList.toggle('dark');
+	});
 </script>
 
 </html>
